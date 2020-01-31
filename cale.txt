@@ -1,0 +1,35 @@
+
+$(document).ready(function() {
+			var my_calendar = $("#dncalendar-container").dnCalendar({
+				minDate: "2017-01-01",
+				maxDate: "2020-12-02",
+				defaultDate: "2019-11-02",
+				
+				monthNames: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ], 
+				monthNamesShort: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+				dayNames: [ 'Sunday', 'Monday', 'Tueasday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                dayNamesShort: [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+                dataTitles: { defaultDate: 'default', today : 'Today' },
+                notes: [
+                		
+                		],
+                showNotes: true,
+                startWeek: 'sunday',
+                dayClick: function(date, view) {
+                	//alert(date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear());
+                	//window.location.href = "http://grubby.co.za/foodeze/restaurant/Daily_food.php";
+                	var win = window.open("http://grubby.co.za/foodeze/restaurant/Daily_food.php?date="+date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), '_blank' );
+                	
+                    win.focus();
+                }
+			});
+
+			// init calendar
+			my_calendar.build();
+
+			// update calendar
+			// my_calendar.update({
+			// 	minDate: "2016-01-05",
+			// 	defaultDate: "2016-05-04"
+			// });
+		});
